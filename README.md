@@ -1,3 +1,16 @@
+# y.css
+
+This is a very clean CSS to start with.
+
+You have some typography classes for small caps for example.
+
+Typically: 
+
+- the right size of the content.
+- header numbering inside article, 
+- nice link (no underline, but a sup cross)
+
+<pre><code>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -24,3 +37,4 @@
         </footer>
     </body>
 </html>
+</code></pre>
