@@ -10,31 +10,31 @@ Typically:
 - header numbering inside article, 
 - nice link (no underline, but a sup cross)
 
-<pre><code>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" type="text/css" href="y.css" />
-        <title>Page title</title>
-    </head>
-    <body>
-        <header>
-            <h1>Title</h1>
-            <h2>Subtitle</h2>
-        </header>
+<pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+        &lt;link rel="stylesheet" type="text/css" href="y.css" /&gt;
+        &lt;title&gt;Page title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Title&lt;/h1&gt;
+            &lt;h2&gt;Subtitle&lt;/h2&gt;
+        &lt;/header&gt;
 
-        <article>
-            <title> <h1>Article Title</h1> </title>
-            <p>This is the article</p>
-            <h2>section</h2>
-            <h3>subsection</h3>
-            <p>Some <em>content</em> <strong>with</strong> <a href="#">a link</a>. </p>
-            <blockquote>A blockquote</blockquote>
-        </article>
+        &lt;article&gt;
+            &lt;title&gt; &lt;h1&gt;Article Title&lt;/h1&gt; &lt;/title&gt;
+            &lt;p&gt;This is the article&lt;/p&gt;
+            &lt;h2&gt;section&lt;/h2&gt;
+            &lt;h3&gt;subsection&lt;/h3&gt;
+            &lt;p&gt;Some &lt;em&gt;content&lt;/em&gt; &lt;strong&gt;with&lt;/strong&gt; &lt;a href="#"&gt;a link&lt;/a&gt;. &lt;/p&gt;
+            &lt;blockquote&gt;A blockquote&lt;/blockquote&gt;
+        &lt;/article&gt;
 
-        <footer>
-        <p>Footer content</p>
-        </footer>
-    </body>
-</html>
-</code></pre>
+        &lt;footer&gt;
+        &lt;p&gt;Footer content&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
