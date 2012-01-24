@@ -1,0 +1,354 @@
+/* Colors (might be simplified) */
+$behindColor: #333
+$mainTextColor: $behindColor
+$mainBackgroundColor: #FAFAFA
+$mainShadowColor: $mainBackgroundColor - #333
+$secondBackgroundColor: #F2F2F2
+$revealColor: #A53
+$secondRevealColor: #AA5533
+$lighterRevealColor: $revealColor + #666
+$imageBackgroundColor: $mainBackgroundColor
+$imageBorderColor: #cccccc
+$borderColor: #cccccc
+$mainLinkColor: $mainTextColor
+$textLinkColor: #555555
+$highlightColor: #888888
+$highlightBlockColor: #555555
+$highlightRevealColor: #e25f2f
+$lighterText: #cccccc
+$lighterColor: #eeeeee
+$lighterColorBorderTop: $lighterText
+$lighterColorBorderBottom: $lighterText
+$secondTextColor: #666666
+$codeBlockColor: $mainBackgroundColor
+$codeBlockBackgroundColor: $behindColor
+/* End for colors */
+
+/* Blocks */
+=mainColor
+  color: $behindColor
+  background:
+    color: $mainBackgroundColor
+
+=lightColor
+  color: $lighterText
+  a
+    color: $lighterText
+  a:hover
+    color: $lighterRevealColor
+
+=highlight
+  font:
+    style: italic
+  padding: 0.5em 1em
+  color: $highlightBlockColor
+  a:hover
+    color: $revealColor
+  strong, b, i, em
+    font:
+      weight: normal
+      style: normal
+    color: $behindColor
+
+=secondColor
+  color: $behindColor
+  border: $borderColor solid 1px
+  border-radius: 5px
+  box-shadow: 0 0 2px $borderColor inset
+  background:
+    color: $lighterColor
+  a
+    color: $secondTextColor
+  a:hover
+    color: $secondRevealColor
+    strong, b, i, em, .nicer
+      color: $lighterRevealColor
+  hr
+    color: $secondTextColor
+    border:
+      top: 1px solid $secondTextColor
+  strong, b, i, em
+    color: $behindColor
+
+=revealColor
+  color: $revealColor
+
+=codeColor
+  background:
+    color: $codeBlockBackgroundColor
+  color: $codeBlockColor
+
+=insetbox
+  background: rgba(#000,.05)
+  box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
+  border: 1px solid rgba(#000,.1)
+  border-radius: 3px
+  &:hover
+    background: rgba(#000,.1)
+    box-shadow: 0 0 6px #555 inset
+
+=clearbutton
+  display: block
+  width: 25%
+  cursor: pointer
+  margin: 1em 0
+  padding: 1em
+  font-size: 16px
+  line-height: 1.4em
+  border-radius: 5px
+  border: 2px solid $mainBackgroundColor
+  color: $lighterText
+  &:hover
+    color: $highlightRevealColor
+    text-shadow: 0 0 2px #FAA
+    background: #ECECEC
+    box-shadow: 0 -1px 8px #CCC inset
+  &:active
+    color: $highlightRevealColor
+    text-shadow: 0 0 2px #FAA
+    background: #EEE
+    box-shadow: 0 -1px 8px #AAA inset
+
+/* End for blocks */
+
+/* Generic styles */
+body
+  +mainColor
+
+a:hover
+  text-shadow: 0 0 2px #FAA
+
+a, a:link, a:visited, a:active, a:hover
+  text-decoration: none
+  outline: none
+
+a, a:link, a:visited, a:active
+  color: $mainLinkColor
+
+a:hover
+  +revealColor
+
+hr
+  color: $lighterColor
+  border:
+    top: 1px solid $lighterColor
+    bottom: none
+    left: none
+    right: none
+
+/* List decaled */
+ul
+  list-style: square
+
+ol,ul
+  padding-left: 0
+ol li, ul li
+  margin: .5em 0
+ol li ul, ol li ol, ul li ol, ul li ul
+  margin: .5em 1.5em
+  list-style: circle
+
+body, h1, h2, h3, h4
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  line-height: 1.4em
+
+article
+  text-align: left
+  width: 35em
+  display: block
+  margin: 2em auto
+  /* Header Numbering */
+  counter-reset: niv02
+  h2
+    counter-increment: niv02
+    counter-reset: niv03
+    marker-offset: 3em
+    &:before
+      content: counter(niv02) ". "
+  h3
+    counter-increment: niv03
+    counter-reset: niv04
+    &:before 
+      content: counter(niv02) "." counter(niv03) ". "
+  h4
+    counter-increment: niv04
+    &:before 
+      content: counter(niv02) "." counter(niv03) "." counter(niv04) ". "
+  /* End of Header Numbering */
+
+pre
+  +codeColor
+  box-shadow: 0 0 1em #000 inset
+  border-radius: 3px
+  padding: 1em
+  line-height: 1.2em
+  font-size: .9em
+
+p
+  margin-bottom: 1.2em
+
+blockquote
+  +highlight
+  background-color: $secondBackgroundColor
+  border: 1px solid $borderColor
+
+abbr,
+acronym
+  font-variant: small-caps
+  text:
+    decoration: none
+  border:
+    bottom:
+      width: 0
+
+// -- TYPOGRAPHY --
+.tiny
+  font-size: 0.7em
+
+.small
+  font-size: 0.8em
+
+.sc
+  font-variant: small-caps
+
+.intro, .resume
+  font-size: 0.9em
+  +highlight
+/* End of Typography classes */
+
+// --- LAYOUTS --
+$VPadCorps: 3em
+$VMarginCorps: 3em
+$content_width: 52em
+
+body
+  text-align: center
+  font-size: 18px
+
+footer
+  color: $lighterText
+  a
+    color: $lighterText
+  a:hover
+    +revealColor
+
+/* Layout helper put a <div class="clear"></div> to reset floats.
+ * Not the cleanest, but efficient */
+.clear
+  clear: both
+
+.box
+  +secondColor
+
+img
+  max-width: 30em
+  border: 1px solid $imageBorderColor
+  background-color: $imageBackgroundColor
+  padding: 0.5em
+  box-shadow: 0 10px 15px #CCC
+  border-radius: 3px
+
+a:hover img
+  background-color: $revealColor + #100 - #011
+
+img
+  .left, .right
+    max-width: 33%
+    margin:
+      top: .6em
+      bottom: .6em
+  .left
+    float: left
+    margin: 
+      left: 0
+      right: 2em
+  .right
+    float: right
+    margin: 
+      left: 2em
+      right: 0
+
+img.inside
+  display: inline
+  vertical-align: middle
+
+pre
+  overflow-x: auto
+  overflow-y: hidden
+
+.footnotes
+  font-size: 0.8em
+  ol
+    color: #CCC
+    font-weight: bold
+    margin-left: 0
+    p
+      color: $behindColor
+      font-weight: normal
+
+strong, b, i, em
+  font-weight: normal
+  color: $highlightColor
+  a
+    color: $mainTextColor
+  a:hover
+    color: $revealColor
+
+article
+  a:hover
+    strong, b, i, em
+      color: $highlightRevealColor
+
+a:hover .nicer
+  color: $lighterRevealColor
+
+.nicer
+  color: $lighterText
+  font-family: "Lucida Grande", Tahoma
+
+.left
+  float: left
+
+.right
+  float: right
+
+article 
+  p a, ul a
+    color: $textLinkColor
+  p a:hover, ul a:hover
+    color: $revealColor
+
+article a:after
+  content: "†"
+  vertical-align: super
+  line-height: 0
+  font-size: .66em
+  color: $highlightColor
+  .footnotes, sup 
+    a:after
+      content: ""
+  sup a
+    font-weight: bold
+    background: #CCC
+    padding: 0 .3em
+    border-radius:  3px
+    -moz-border-radius:  3px
+    -webkit-border-radius:  3px
+    color: $mainBackgroundColor
+    &:hover
+      background: $revealColor
+
+table
+  border: 1px solid $borderColor
+table tr td
+  padding: 2px .5em
+table tr
+  &:nth-child(odd)
+    background-color: $secondBackgroundColor
+  &:nth-child(even)
+    background-color: $mainBackgroundColor
+
+p code
+  background: $secondBackgroundColor
+  border: solid 1px $borderColor
+  padding: 2px
