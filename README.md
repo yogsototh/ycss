@@ -10,6 +10,8 @@ Typically:
 - header numbering inside article, 
 - nice link (no underline, but a sup cross)
 
+A typical HTML to use would be:
+
 <pre>
 &lt;html&gt;
     &lt;head&gt;
